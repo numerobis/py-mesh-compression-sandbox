@@ -21,6 +21,7 @@ encodings = [
         encode.difference(basic_encode.gamma(), mapping.identity()),
         encode.difference(basic_encode.nibble(), mapping.identity()),
         encode.difference(basic_encode.variableword(), mapping.identity()),
+        encode.difference(basic_encode.bytelong(), mapping.identity()),
         encode.difference(basic_encode.gammagamma(), mapping.morton(data.points)),
 ]
 
