@@ -95,19 +95,3 @@ class bytelong(object):
       return 8
     else:
       return 8 + 64
-
-class flat(object):
-  def __init__(self, maxInt):
-    for nbytes in range(9):
-      if maxInt < 2**(nbytes * 8) - 1:
-        self._word = nbytes * 8
-        break
-
-  def __str__(self): return "flat-{}".format(self._word)
-
-  def bitlength(self, word):
-    """
-    Return the length of a word encoded large enough to hold the largest int.
-    We encode just the right number of bytes, so we can have 24-bit ints.
-    """
-    return self._word
