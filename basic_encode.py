@@ -17,7 +17,7 @@ class gamma(object):
       """
       if word == 0: return 1
       else: 
-        wordLength = int(math.ceil(math.log(abs(word)) / math.log(2)))
+        wordLength = 1 + int(math.floor(math.log(abs(word)) / math.log(2)))
         return 2 * wordLength + 1
 
 class gammagamma(object):
@@ -33,7 +33,7 @@ class gammagamma(object):
       if word == 0: return 1
       else:
         # compute the length of the number. It's not zero.
-        wordLength = int(math.ceil(math.log(abs(word)) / math.log(2)))
+        wordLength = 1 + int(math.floor(math.log(abs(word)) / math.log(2)))
         # gamma-encode the length, but don't write the sign bit
         n = self._gamma.bitlength(wordLength) - 1
         # now write the number
