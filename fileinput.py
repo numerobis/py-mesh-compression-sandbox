@@ -16,6 +16,9 @@ class ply_file(object):
       npoints = 0
       nfaces = 0
       for line in infile:
+        line = re.sub(r'\s*#.*','', line)
+        if len(line) == 0:
+          continue
         m = re.match('element (vertex|face) ([0-9]+)', line)
         if m:
           if m.group(1) == 'vertex':
@@ -32,7 +35,7 @@ class ply_file(object):
           continue
         elif len(self.points) < npoints:
           data = line.split()
-          self.points.append( [float(x) for x in data[0:3]] )
+          self.points.append( tuple(float(x) for x in data[0:3]) )
         else:
           data = line.split()
-          self.faces.append( [int(x) for x in data[1:]] )
+          self.faces.append( tuple(int(x) for x in data[1:]) )
