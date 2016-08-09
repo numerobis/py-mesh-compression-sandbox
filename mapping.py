@@ -4,7 +4,7 @@ import math
 
 # A 'mapping' permutes indices in [0..n) via the [] operator, and it has a name via str()
 
-class identity_mapping(object):
+class identity(object):
   def __getitem__(self, index): return index
   def __str__(self): return "identity"
 
@@ -15,7 +15,7 @@ class array_mapping(object):
   def __getitem__(self, index): return self._array[index]
   def __str__(self): return self._name
 
-def morton_mapping(points):
+def morton(points):
   """
   The implementation is to order according to Morton-order: interleave the bits. 
   I use the full precision to do this.

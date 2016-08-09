@@ -1,4 +1,6 @@
 ply
+# This happens to be sorted in morton order.
+# The idea is to be able to make sure that reordering in Morton order does nothing!
 format ascii 1.0
 element vertex 10
 element face 5
