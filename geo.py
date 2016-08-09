@@ -2,8 +2,6 @@
 from __future__ import division
 
 import sys
-import re
-import math
 
 import mapping
 import fileinput
@@ -11,6 +9,12 @@ import encode
 import basic_encode
 
 ###########################################################################
+
+if len(sys.argv) < 2:
+  print "usage: {} torus.ply".format(sys.argv[0])
+  print "to test different encodings, open the script and modify the encodings array"
+  exit(1)
+
 
 data = fileinput.ply_file(sys.argv[1])
 print "opened %s; got %d points and %d faces" % (sys.argv[1], len(data.points), len(data.faces))
