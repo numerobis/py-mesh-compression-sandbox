@@ -21,6 +21,7 @@ def morton(points):
   I use the full precision to do this.
   Notionally we see doubles as being signed integers of length 53+2**13 bits.
   """
+  # implementation adapted from http://compgeom.com/~piyush/papers/tvcg_stann.pdf
   def msdb(ma, mb):
     """
     Returns the index of the most significant differing bit.
